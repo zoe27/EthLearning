@@ -1,3 +1,6 @@
 [submodule "learning/lib/forge-std"]
 	path = learning/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "learning/lib/openzeppelin-contracts"]
+	path = learning/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
