@@ -3,6 +3,7 @@ pragma solidity ^0.8.20;
 
 contract Ballot {
 
+    // 设置开始结束时间
     uint private start_time;
     uint private end_time;
 
@@ -22,6 +23,7 @@ contract Ballot {
     mapping(address => Voter) public voters;
     Proposal[] public proposals;
 
+    // 初始化开始结束时间
     constructor(bytes32[] memory proposalNames, uint start, uint end) {
         chairperson = msg.sender;
         voters[chairperson].weight = 1;
@@ -64,6 +66,7 @@ contract Ballot {
         }
     }
 
+    // 添加时间限制， 投票时间外不能进行投票
     function vote(uint256 proposal) external {
         require(block.timestamp > start_time, "vote is not stared");
         require(block.timestamp < end_time, "vote is end");

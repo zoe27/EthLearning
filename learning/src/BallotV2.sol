@@ -92,6 +92,7 @@ contract Ballot is Ownable {
         winnerName_ = proposals[winningProposal()].name;
     }
 
+    // 变更投票者的权重，只能在投票时间内变更
     function setVoterWeight(address voter, uint weight) external onlyOwner {
 
         require(block.timestamp > start_time, "vote is not stared");
